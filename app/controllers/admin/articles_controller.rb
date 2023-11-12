@@ -21,7 +21,7 @@ module Admin
     end
 
     def update
-      if @article.save
+      if @article.update(article_params)
         render :show, status: :ok
       else
         render json: { messages: @article.errors.full_messages }, status: :unprocessable_entity
@@ -38,7 +38,7 @@ module Admin
     private
 
     def set_article
-      @article = Article.find_by! params[:handle]
+      @article = Article.find_by! handle: params[:handle]
     end
 
     def article_params
