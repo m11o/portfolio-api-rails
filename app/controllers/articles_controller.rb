@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     # TODO: set pagination
+    # TODO: ransack
     @articles = Article.all
   end
 
