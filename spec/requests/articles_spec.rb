@@ -41,7 +41,7 @@ describe ArticlesController, type: :request do
     end
 
     context '存在しない記事の場合' do
-      subject { get "/articles/HOGE.json", headers: headers }
+      subject { get '/articles/HOGE.json', headers: headers }
 
       it '404が返ること' do
         is_expected.to eq 404

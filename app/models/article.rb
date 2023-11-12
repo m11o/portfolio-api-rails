@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Article < ApplicationRecord
   validates :handle, presence: true, uniqueness: { case_sensitive: true }
   validates :title, presence: true
