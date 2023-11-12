@@ -1,0 +1,16 @@
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: disable
+  Exclude:
+    - 'bin/*'
+    - 'config/**/*'
+    - 'log/**/*'
+    - 'db/migrate/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+
+require:
+  - rubocop-rails
+
+Rails:
+  Enabled: true
