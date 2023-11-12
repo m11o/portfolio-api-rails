@@ -6,8 +6,8 @@ class ApplicationController < ActionController::API
   private
 
   def verify_token
-    authenticate_or_request_with_http_token do |token|
-      ActiveSupport::SecurityUtils.secure_compare(token, Rails.env.fetch['API_TOKEN'])
-    end
+    ActionController::HttpAuthentication::Token.authenticate(self) do |token|
+      ActiveSupport::SecurityUtils.secure_compare(token, ENV.fetch('API_TOKEN'))
+    end || head(:unauthorized)
   end
 end
