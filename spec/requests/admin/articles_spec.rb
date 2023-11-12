@@ -41,7 +41,7 @@ describe Admin::ArticlesController, type: :request do
     end
 
     context '存在しない記事の場合' do
-      subject { get "/admin/articles/HOGE.json", headers: headers }
+      subject { get '/admin/articles/HOGE.json', headers: headers }
 
       it '404が返ること' do
         is_expected.to eq 404
@@ -127,7 +127,7 @@ describe Admin::ArticlesController, type: :request do
       let!(:params) do
         {
           article: {
-            title: nil,
+            title: nil
           }
         }
       end
@@ -137,7 +137,7 @@ describe Admin::ArticlesController, type: :request do
       end
 
       it '記事が更新されないこと' do
-        expect { subject }.not_to change { article.reload.title }
+        expect { subject }.not_to(change { article.reload.title })
       end
     end
 
