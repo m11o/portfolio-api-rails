@@ -24,4 +24,20 @@ describe Article, type: :model do
       end
     end
   end
+
+  describe '.publish' do
+    around do |example|
+      freeze_time { example.run }
+    end
+
+    before do
+      create(:article, published_at: 1.second.ago, handle: 'ABC111111111')
+      create(:article, published_at: Time.zone.now, handle: 'ABC222222222')
+      create(:article, published_at: 1.second.from_now, handle: 'ABC333333333')
+    end
+
+    it '現在時刻よりpublished_atが小さいのみ選択できる' do
+      expect(Article.publish.pluck(:handle)).to match_array(%w[ABC111111111 ABC222222222])
+    end
+  end
 end

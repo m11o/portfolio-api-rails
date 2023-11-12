@@ -7,6 +7,8 @@ class Article < ApplicationRecord
 
   before_validation :generate_handle
 
+  scope :publish, -> { where(Article.arel_table[:published_at].lteq(Time.zone.now)) }
+
   private
 
   def generate_handle
