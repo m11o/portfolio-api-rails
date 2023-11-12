@@ -8,6 +8,6 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1.json
   def show
-    @article = Article.find_by handle: params[:handle]
+    @article = Article.find_by! handle: params[:handle]
   end
 end
