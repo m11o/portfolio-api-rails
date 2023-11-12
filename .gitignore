@@ -70,3 +70,4 @@ yarn-debug.log*
 
 .idea
 vendor/bundle
+.gem_rbs_collection

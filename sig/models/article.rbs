@@ -1,0 +1,5 @@
+class Article < ::ApplicationRecord
+  private
+
+  def generate_handle: () -> void
+end
