@@ -198,6 +198,7 @@ GEM
       rbs (>= 1)
     rdoc (6.6.0)
       psych (>= 4.0.0)
+    redcarpet (3.6.0)
     regexp_parser (2.8.2)
     reline (0.4.0)
       io-console (~> 0.5)
@@ -265,6 +266,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.1.2)
   rbs_rails
+  redcarpet
   rspec-rails
   rubocop
   rubocop-rails
