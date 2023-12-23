@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-json.partial! 'articles/article', article: @article
+json.extract! @article, :handle, :title, :description, :body, :body_html, :published_at
