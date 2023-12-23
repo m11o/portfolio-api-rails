@@ -2,6 +2,8 @@
 
 module Admin
   class ArticlesController < ApplicationController
+    include Md2Html
+
     before_action :set_article, only: %i[show update destroy]
 
     def index
@@ -13,6 +15,8 @@ module Admin
 
     def create
       @article = Article.new article_params
+      @article.body_html = md2html(@article.body)
+
       if @article.save
         render :show, status: :ok
       else
@@ -21,7 +25,10 @@ module Admin
     end
 
     def update
-      if @article.update(article_params)
+      @article.assign_attributes article_params
+      @article.body_html = md2html(@article.body)
+
+      if @article.save
         render :show, status: :ok
       else
         render json: { messages: @article.errors.full_messages }, status: :unprocessable_entity
