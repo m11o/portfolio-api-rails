@@ -43,6 +43,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rbs_rails', require: false
+  gem 'dotenv-rails'
 end
 
 group :test do
