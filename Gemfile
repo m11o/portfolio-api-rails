@@ -58,3 +58,4 @@ group :development do
 end
 
 gem 'redcarpet'
+gem "google-cloud-firestore"
