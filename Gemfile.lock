@@ -192,7 +192,6 @@ GEM
     msgpack (1.7.2)
     multi_json (1.15.0)
     mutex_m (0.2.0)
-    mysql2 (0.5.5)
     net-imap (0.4.4)
       date
       net-protocol
@@ -339,7 +338,6 @@ DEPENDENCIES
   faker
   google-cloud-firestore
   jbuilder
-  mysql2 (~> 0.5)
   puma (>= 5.0)
   rails (~> 7.1.2)
   rbs_rails
