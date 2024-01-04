@@ -10,7 +10,7 @@ class FirestoreRecordBase
   attribute :id, :string
 
   def create!
-    raise ActiveModel::ValidationError.new(self) unless valid?
+    raise ActiveModel::ValidationError, self unless valid?
 
     added_doc = collection.add(attributes.except(:id))
     self.id = added_doc.document_id
@@ -25,11 +25,9 @@ class FirestoreRecordBase
   end
 
   def update!(update_attributes = {})
-    if update_attributes.any?
-      assign_attributes(update_attributes)
-    end
+    assign_attributes(update_attributes) if update_attributes.any?
 
-    raise ActiveModel::ValidationError.new(self) unless valid?
+    raise ActiveModel::ValidationError, self unless valid?
 
     doc_ref = collection.doc(document_path)
     doc_ref.update(attributes.except(:id))

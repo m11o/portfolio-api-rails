@@ -57,5 +57,5 @@ group :development do
   gem 'rubocop-rails', require: false
 end
 
+gem 'google-cloud-firestore'
 gem 'redcarpet'
-gem "google-cloud-firestore"
