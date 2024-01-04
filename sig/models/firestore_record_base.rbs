@@ -1,0 +1,7 @@
+class FirestoreRecordBase
+  self.@collection_name: String
+  self.@subcollections: Array[String]
+
+  def self.collection_name: (_ToS name) -> void
+  def self.subcollection: (_ToS subcollection_name) -> void
+end
