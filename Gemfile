@@ -7,9 +7,6 @@ ruby '3.2.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3'
 
-# Use mysql as the database for Active Record
-gem 'mysql2', '~> 0.5'
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
 
@@ -57,4 +54,5 @@ group :development do
   gem 'rubocop-rails', require: false
 end
 
+gem 'google-cloud-firestore'
 gem 'redcarpet'
